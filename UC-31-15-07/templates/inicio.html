@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial</title>
+
+    <style>
+      
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.container{
+    width:100%;
+    max-width:450px;
+    background:#fff;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    animation:aparecer .6s;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    color:#1e3c72;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+h2{
+    color:#555;
+    text-align:center;
+    margin-bottom:25px;
+    font-size:18px;
+}
+
+p{
+    margin-top:10px;
+    color:#555;
+    line-height:1.6;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#333;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:2px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    transition:.3s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#2a5298;
+    box-shadow:0 0 10px rgba(42,82,152,.3);
+}
+
+button{
+    width:100%;
+    margin-top:25px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#1e3c72;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#2a5298;
+    transform:translateY(-2px);
+}
+
+.msg{
+    margin-top:20px;
+    text-align:center;
+    font-weight:bold;
+    color:#d63031;
+}
+
+.sucesso{
+    margin:20px 0;
+    background:#d4edda;
+    color:#155724;
+    padding:15px;
+    border-radius:10px;
+    border-left:5px solid #28a745;
+}
+
+.info{
+    background:#f4f7fb;
+    padding:18px;
+    border-radius:12px;
+    margin-top:20px;
+}
+
+.info p{
+    margin:8px 0;
+}
+
+.botoes{
+    display:flex;
+    gap:12px;
+    margin-top:25px;
+}
+
+.botoes a{
+    flex:1;
+    text-decoration:none;
+    text-align:center;
+    background:#1e3c72;
+    color:white;
+    padding:12px;
+    border-radius:10px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.botoes a:hover{
+    background:#2a5298;
+}
+
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:#777;
+    font-size:14px;
+}
+
+
+      
+    </style>
+</head>
+<body>
+
+ 
+<div class="container">
+
+    <h1>Bem-vindo(a), {{ usuario }}!</h1>
+
+    <div class="sucesso">
+        ✔ Seu acesso foi autorizado com sucesso.
+    </div>
+
+    <div class="info">
+        <p><strong>Usuário:</strong> {{ usuario }}</p>
+        <p><strong>Status:</strong> Conectado</p>
+        <p><strong>Segurança:</strong> Senha protegida por criptografia (Hash).</p>
+        <p><strong>Sistema:</strong> Login Flask.</p>
+    </div>
+
+    <div class="botoes">
+        <a href="/">Cadastrar</a>
+        <a href="/login">Sair</a>
+    </div>
+
+    <footer>
+        Sistema de Login com Senha Criptografada • Flask + Werkzeug
+    </footer>
+
+</div>
+
+
+
+</body>
+</html>
